@@ -8,22 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		DD4FAEBD2AC97EE7001CD8D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4FAEBC2AC97EE7001CD8D0 /* AppDelegate.swift */; };
-		DD4FAEBF2AC97EE7001CD8D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4FAEBE2AC97EE7001CD8D0 /* SceneDelegate.swift */; };
 		DD4FAEC12AC97EE7001CD8D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4FAEC02AC97EE7001CD8D0 /* ViewController.swift */; };
 		DD4FAEC42AC97EE7001CD8D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4FAEC22AC97EE7001CD8D0 /* Main.storyboard */; };
 		DD4FAEC62AC97EE8001CD8D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD4FAEC52AC97EE8001CD8D0 /* Assets.xcassets */; };
 		DD4FAEC92AC97EE8001CD8D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD4FAEC72AC97EE8001CD8D0 /* LaunchScreen.storyboard */; };
+		DD4FAED12AC97FAD001CD8D0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4FAED02AC97FAD001CD8D0 /* DetailViewController.swift */; };
+		DD4FAEF42AC9BDC7001CD8D0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DD4FAEF32AC9BDC7001CD8D0 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD4FAEB92AC97EE7001CD8D0 /* WhitehousePetition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhitehousePetition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4FAEBC2AC97EE7001CD8D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD4FAEBE2AC97EE7001CD8D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD4FAEC02AC97EE7001CD8D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DD4FAEC32AC97EE7001CD8D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD4FAEC52AC97EE8001CD8D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD4FAEC82AC97EE8001CD8D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD4FAECA2AC97EE8001CD8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD4FAED02AC97FAD001CD8D0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4FAEF42AC9BDC7001CD8D0 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,8 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				DD4FAEBC2AC97EE7001CD8D0 /* AppDelegate.swift */,
-				DD4FAEBE2AC97EE7001CD8D0 /* SceneDelegate.swift */,
 				DD4FAEC02AC97EE7001CD8D0 /* ViewController.swift */,
+				DD4FAED02AC97FAD001CD8D0 /* DetailViewController.swift */,
 				DD4FAEC22AC97EE7001CD8D0 /* Main.storyboard */,
 				DD4FAEC52AC97EE8001CD8D0 /* Assets.xcassets */,
 				DD4FAEC72AC97EE8001CD8D0 /* LaunchScreen.storyboard */,
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = WhitehousePetition;
+			packageProductDependencies = (
+				DD4FAEF32AC9BDC7001CD8D0 /* SwiftyJSON */,
+			);
 			productName = WhitehousePetition;
 			productReference = DD4FAEB92AC97EE7001CD8D0 /* WhitehousePetition.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = DD4FAEB02AC97EE7001CD8D0;
+			packageReferences = (
+				DD4FAEF22AC9BDC7001CD8D0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = DD4FAEBA2AC97EE7001CD8D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +148,7 @@
 			files = (
 				DD4FAEC12AC97EE7001CD8D0 /* ViewController.swift in Sources */,
 				DD4FAEBD2AC97EE7001CD8D0 /* AppDelegate.swift in Sources */,
-				DD4FAEBF2AC97EE7001CD8D0 /* SceneDelegate.swift in Sources */,
+				DD4FAED12AC97FAD001CD8D0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD4FAEF22AC9BDC7001CD8D0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD4FAEF32AC9BDC7001CD8D0 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD4FAEF22AC9BDC7001CD8D0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD4FAEB12AC97EE7001CD8D0 /* Project object */;
 }
