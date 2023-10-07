@@ -26,28 +26,33 @@ class ViewController: UITableViewController {
             urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         }
         
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                let json = try? JSON(data: data)
-                
-                if json?["metadata"]["responseInfo"]["status"].intValue == 200 {
-                    parseJSON(json: json ?? "")
+        DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
+            
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    let json = try? JSON(data: data)
+                    
+                    if json?["metadata"]["responseInfo"]["status"].intValue == 200 {
+                        self.parseJSON(json: json ?? "")
+                    } else {
+                        self.showError()
+                    }
                 } else {
-                    showError()
+                    self.showError()
                 }
             } else {
-                showError()
+                self.showError()
             }
-        } else {
-            showError()
         }
     }
         
     
     func showError() {
-        let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; Please check your conetction and try again.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title: "Loading error", message: "There was a problem loading the feed; Please check your conetction and try again.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(ac, animated: true, completion: nil)
+        }
     }
         func parseJSON(json: JSON) {
             for result in json["results"].arrayValue {
@@ -58,7 +63,10 @@ class ViewController: UITableViewController {
                 let dict = ["title": title, "body": body, "sigs": sigs]
                 objects.append(dict)
             }
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
         }
     
     override func didReceiveMemoryWarning() {
